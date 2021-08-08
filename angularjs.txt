@@ -1,0 +1,128 @@
+what is angular js?
+angular ek js ka front end  framework hai jo ke humein mainly single page application bnanay me help krta hai
+
+or yeh google maintain krta hai
+
+single page application :
+jo  ek hi page pr rehty hue mukhtalif buttons pr click krky changes hotin rehtin hain same page pr rehty hue without reloading the page example:
+1)youtube
+2)gmail
+
+angular me compoenents bnaksty hain or ek component ko ek se zyada bar use same website me  use krskty hain
+
+angular ek bht bari application ko manage krny me asani deti hai
+
+routing module:
+yeh alag alag links visit krny krny me facilitaet krta hia bina page ko reload kiye apky url bar ka address bhi change hoga or apka page reload bhi ni hoga.
+
+install:
+1)node js->js pehly srf browser pr run krti thi ap browser se bhr js ko use krskty ho  node js me,express js framework hai
+2)angular cli->yeh ek utility hoti hai jo humain components create krny me madad krti hai
+
+advantages:
+1)less bandwidth use of server
+2)provide optimization
+
+code structure:
+src=> source folder jis me sara code hoga
+tslint.json=> type script ke leye
+index.html=>
+<app-root>->yeh body ke content ko hold krta hai
+
+app-routing.module.ts=>yeh ek routing module hai routing module ka mtlb url change krna ho tou usky leye
+app.component.html=>app-root ke page me jo content hai uska code hai along with drive app.componenent.ts or app.component.css ke sth manage kregi
+
+app.componenet.css=>css ati hai sari
+app.component.ts=>component ki typescript file hai is me kis trah se module kam krega
+app.compoenet.spec.ts=>testing ke leye kam ati hai
+app.module.ts=>yeh humara entry point hai angular me
+declartions me :woh saray compoenets aty hain is me jo hum banayengy
+imports:koi bhi external module access krna chahty hain 
+e.g:
+browsermodule
+approuting module
+
+providers:[],
+boostrap:[AppComponenet]
+})
+
+component in angular:
+compoenet  individual part hota hai website ka
+e.g:youtube
+compoenets:
+1)header 
+2)left navigation
+3)main component
+
+npm install bootstrap
+npm install jquery
+
+include bootstrap in application
+angular.json=>
+     "styles": [
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+            ],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+
+            ]
+          }
+
+{}=>javascript variable ya expression use krna chahata hon
+
+settimeoutfunction=> islye use hota hai takay kch dair bd code execute ho
+
+
+ constructor()
+  {
+    setTimeout(()=>{
+      this.title="Changed title";
+    },2000);
+  }
+
+to generate component:
+ng generate componenet MyComponents/todos
+
+todos.componenent.ts:
+
+
+import{} from "../../Todo";
+
+ngfor directives:
+yeh humko for loop type ka provide krti hai yeh exactly js ka for loop ni hai yeh ek directive hai
+
+Directives in angular:
+yeh ek custom html attributes hoty hain
+
+extensions:
+angular language service
+
+event emitter:
+jesi hi todo delete kiya jayega wesi hi ek event emit hojayega yhn se
+onClick(todo:Todo)
+{
+
+console.log("onClick has been triggered");
+}
+onclick(todo)=>is me todo ka array pass hojayega khud
+
+@output and @input are event emitters
+
+(todoDelete)=>humny yeh apna event bnaya hai
+//for deleting element in array
+const index=this.todos.indexOf(todo);
+    this.todos.splice(index,1)
+
+//generate component:
+ng g c MyComponents/add-todo
+
+<from (ngSubmit)="onSubmit()".=> ngSubmit page reload ni krega or submit krgea
+
+ngModel=>
+
+form use krny ke leye app.module.ts=>  me issay add krna parega
+imports:[
+FormsModule
+],
